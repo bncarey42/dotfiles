@@ -53,7 +53,7 @@ function aur() {
 	#clone source to APPDIR
 	git clone $GIT
 
-	#strip git location for app name and make directory to extract source to
+	#strip git location for app name
 	tmpApp=${GIT:26}
 	APP=${tmpApp%.*}
 
