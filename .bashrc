@@ -15,6 +15,9 @@ export MAKEFLAG='-j9 -l8'
 
 alias ..='cd ..;' # can then do .. .. .. to move up multiple directories.
 alias ls='ls -lshGg --hyperlink --color=always'
+alias la='ls -a'
+alias x="clear"
+alias s="sudo "
 
 #Arch
 #install a package
@@ -25,8 +28,6 @@ alias update='sudo pacman -Syu'
 alias uninstall='sudo pacman -R'
 #suspend system
 alias sleep="systemctl suspend"
-#install package from the AUR based on specified .git repo
-alias aur="sh ~/.local/share/bin/S_U_S/install-from-AUR.sh"
 #update grub
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg; sudo grub-mkconfig'
 
@@ -40,3 +41,26 @@ alias gitlog='git log --graph --decorate --pretty=oneline --abbrev-commit'
 source ~/.local/share/bin/git-flow-completion/git-flow-completion.bash
 #needed for posh-git-sh
 source ~/.local/share/bin/posh-git-sh/git-prompt.sh
+
+function aur() {
+	CURRENTPATH=$(pwd)
+	DOWNLOADDIR="Downloads/AUR"
+	GIT=$1
+	echo "changing directory to ~/$DOWNLOADDIR"
+	cd ~/$DOWNLOADDIR
+
+	echo "cloneing $GIT"
+	#clone source to APPDIR
+	git clone $GIT
+
+	#strip git location for app name and make directory to extract source to
+	tmpApp=${GIT:26}
+	APP=${tmpApp%.*}
+
+	echo "building and installing $APP"
+	#enter cloned folder
+	cd "$APP/"
+	makepkg -csi
+	cd $CURRENTPATH
+}
+export -f aur
