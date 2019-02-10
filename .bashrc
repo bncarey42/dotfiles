@@ -64,3 +64,26 @@ function aur() {
 	cd $CURRENTPATH
 }
 export -f aur
+
+function update_aur() {
+	CURRENTPATH=$(pwd)
+	DOWNLOADDIR="Downloads/AUR"
+	echo "changing directory to ~/$DOWNLOADDIR"
+	cd ~/$DOWNLOADDIR
+
+	for dir in */; do
+		cd $dir
+		git checkout master
+		git fetch
+		if [ `git rev-list HEAD...origin/master --count` != 0 ]
+			then
+				echo "updating $dir"
+				git merge -X theirs origin/master
+				makepkg -csi
+				echo "$dir updated"
+		fi
+		cd ..
+	done
+	cd $CURRENTPATH
+}
+export -f update_aur
