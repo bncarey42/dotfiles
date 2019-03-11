@@ -1,0 +1,12 @@
+#!/bin/bash
+# Stops accidental commits to master
+
+BRANCH=`git rev-parse --abbrev-ref HEAD`
+
+if [[ "$BRANCH" == "master" || "$BRANCH" == "production" ]]; then
+  echo "(commit rejected): Are you sure you don't want to change branches?"
+  echo "If not, commit with -n to bypass this hook."
+  exit 1
+fi
+
+exit 0
