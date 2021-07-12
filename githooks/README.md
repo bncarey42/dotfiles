@@ -1,0 +1,3 @@
+./githooks
+
+**_UNTESTED_** I coppied this from somewhere and just wanted to remember it...
