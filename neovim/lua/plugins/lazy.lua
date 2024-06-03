@@ -87,6 +87,7 @@ require('lazy').setup({
     event = 'InsertEnter',
     dependencies = {
       {'L3MON4D3/LuaSnip'},
+      {'roobert/tailwindcss-colorizer-cmp.nvim', config=true},
     },
     config = function()
       -- Here is where you configure the autocompletion settings.
@@ -98,7 +99,16 @@ require('lazy').setup({
       local cmp_action = lsp_zero.cmp_action()
 
       cmp.setup({
+        
         formatting = lsp_zero.cmp_format({details = true}),
+        
+        local format_kinds = formatting.format
+
+        formatting.format = function(entry, item)
+          format_kinds(entry, item) -- add icons
+          return require("tailwindcss-colorizer-cmp").formatter(entry, item)
+        end
+
         mapping = cmp.mapping.preset.insert({
           ['<C-Space>'] = cmp.mapping.complete(),
           ['<C-u>'] = cmp.mapping.scroll_docs(-4),
@@ -119,6 +129,11 @@ require('lazy').setup({
       {'hrsh7th/cmp-nvim-lsp'},
       {'williamboman/mason-lspconfig.nvim'},
     },
+    opts = {
+      servers = {
+        tailwindcss = {},
+      }
+    },
     config = function()
       -- This is where all the LSP shenanigans will live
       local lsp_zero = require('lsp-zero')
@@ -136,6 +151,7 @@ require('lazy').setup({
         ensure_installed = {
           'pyright',  -- python
           'tsserver', -- js, ts
+          'tailwindcss'
         },
         handlers = {
           lsp_zero.default_setup,
@@ -159,6 +175,17 @@ require('lazy').setup({
         end,
       }
     end
+  },
+  {
+    "NvChad/nvim-colorizer.lua",
+    config = function()
+      require("colorizer").setup({
+        user_default_options = {
+          tailwind = true,
+        }
+      })
+    end,
   }
 
 })
+
