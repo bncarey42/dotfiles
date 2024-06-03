@@ -102,12 +102,12 @@ require('lazy').setup({
         
         formatting = lsp_zero.cmp_format({details = true}),
         
-        local format_kinds = formatting.format
+        -- TODO        local format_kinds = formatting.format
 
-        formatting.format = function(entry, item)
-          format_kinds(entry, item) -- add icons
-          return require("tailwindcss-colorizer-cmp").formatter(entry, item)
-        end
+        --formatting.format = function(entry, item)
+        --  format_kinds(entry, item) -- add icons
+        --  return require("tailwindcss-colorizer-cmp").formatter(entry, item)
+       -- end
 
         mapping = cmp.mapping.preset.insert({
           ['<C-Space>'] = cmp.mapping.complete(),
