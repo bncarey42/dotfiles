@@ -1,0 +1,13 @@
+[user]
+  #email=use github account email
+  name=Ben Carey
+[init]
+	defaultBranch = main
+#	templateDir = $GIT_TEMPLATE_DIR
+[core]
+# excludesFile = $HOME/.git_template/.gitignore
+[pull]
+	rebase = false
+[alias]
+	oops = commit --amend -m
+	logs = log --graph --decorate --pretty=oneline --abbrev-commit
