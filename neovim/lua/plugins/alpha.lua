@@ -30,7 +30,7 @@ return {
       [[   . . . ...."'                                     ]],
       [[   .. . ."'                                         ]],
       [[ ..                                                 ]],
-      [[         bncarey42 | raventrout | Turnberry         ]],
+      [[   bncarey42 | noosphere | raventrout | Turnberry   ]],
     }
     dashboard.section.header.val = logo
 
