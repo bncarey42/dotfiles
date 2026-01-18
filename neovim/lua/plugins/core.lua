@@ -32,6 +32,7 @@ return {
         "typescript",
         "vim",
         "yaml",
+        "go",
       },
     },
   },
