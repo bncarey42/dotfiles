@@ -16,7 +16,7 @@ return {
   -- add more treesitter parsers
   {
     "nvim-treesitter/nvim-treesitter",
-    "nvim-treesitter/nvim-treesitter",
+
 
     -- Pin to f7955203: commit 8cdffc6d added "tab" to vim query but parser
     -- doesn't support it yet. See: [github.com/nvim-treesitter/nvim-treesitter](http://github.com/nvim-treesitter/nvim-treesitter)

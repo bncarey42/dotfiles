@@ -11,14 +11,14 @@ return {
     keys = {
       {
         "<leader>cps",
-        ft = "markdown",
         "<cmd>LivePreview start<cr>",
+        ft = "markdown",
         desc = "Markdown Preview",
       },
       {
         "<leader>cpc",
-        ft = "markdown",
         "<cmd>LivePreview close<cr>",
+        ft = "markdown",
         desc = "Close Markdown Preview",
       },
 
