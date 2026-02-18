@@ -15,7 +15,6 @@ return {
   { import = "lazyvim.plugins.extras.lang.json" },
   { import = "lazyvim.plugins.extras.lang.yaml" },
   { import = "lazyvim.plugins.extras.lang.toml" },
-  { import = "lazyvim.plugins.extras.lang.markdown" }, --
 
   -- nvim functionality
   { import = "lazyvim.plugins.extras.util.mini-hipatterns" }, -- highlights colors inline
