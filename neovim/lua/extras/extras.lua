@@ -9,7 +9,6 @@ return {
   { import = "lazyvim.plugins.extras.lang.tailwind" },
   -- cloud
   { import = "lazyvim.plugins.extras.lang.docker" },
-  { import = "lazyvim.plugins.extras.lang.docker" },
   { import = "lazyvim.plugins.extras.lang.terraform" },
   -- markup formats
   { import = "lazyvim.plugins.extras.lang.json" },
