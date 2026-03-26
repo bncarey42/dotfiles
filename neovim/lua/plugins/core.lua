@@ -1,4 +1,5 @@
-return {
+return {}
+--[[return {
 
    -- add pyright to lspconfig
    {
@@ -86,4 +87,4 @@ return {
          },
       },
    },
-}
+}]]
