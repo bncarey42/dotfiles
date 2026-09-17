@@ -11,6 +11,7 @@ return {
 
    -- frameworks
    { import = "lazyvim.plugins.extras.lang.vue" },
+   { import = "lazyvim.plugins.extras.lang.angular" },
 
    -- formatting & linting
    { import = "lazyvim.plugins.extras.formatting.prettier" },
@@ -29,6 +30,6 @@ return {
    -- util
    { import = "lazyvim.plugins.extras.util.mini-hipatterns" },
 
-   -- editor
-   { import = "lazyvim.plugins.extras.editor.Fzf" },
+   --ai
+   -- { import = "lazyvim.plugins.extras.ai.copilot" },
 }
